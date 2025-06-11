@@ -16,7 +16,7 @@ jobs:
             - name: Install EPL
               run: git clone https://github.com/WmFreeSmile/elbuild.git
             - name: Show dir
-              run: dir
+              run: dir .\elbuild
             - name: Make test.e
               run: .\elbuild\eplc.exe test.e /o test.exe /static
             - name: Show result
