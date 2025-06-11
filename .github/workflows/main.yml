@@ -1,0 +1,27 @@
+name: TestBuildEpl
+
+on:
+#    workflow_dispatch:
+    push
+
+permissions:
+  contents: read
+  
+jobs:
+    test_build:
+        runs-on: windows-latest
+        steps:
+            - uses: actions/checkout@v4
+            
+            - name: Install EPL
+              run: git clone https://github.com/WmFreeSmile/elbuild.git
+            - name: Show dir
+              run: dir
+            - name: Make test.e
+              run: .\elbuild\eplc.exe test.e /o test.exe /static
+            - name: upload result
+              uses: actions/upload-artifact@v4
+              with:
+                name: test
+                path: ${{ github.workspace }}\test.exe
+                
