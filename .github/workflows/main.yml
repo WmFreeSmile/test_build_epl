@@ -19,6 +19,9 @@ jobs:
               run: dir
             - name: Make test.e
               run: .\elbuild\eplc.exe test.e /o test.exe /static
+            - name: Show result
+              run: dir
+              
             - name: upload result
               uses: actions/upload-artifact@v4
               with:
