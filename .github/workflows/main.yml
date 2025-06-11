@@ -2,7 +2,7 @@ name: TestBuildEpl
 
 on:
 #    workflow_dispatch:
-    push
+    [workflow_dispatch,push]
 
 permissions:
   contents: read
@@ -18,7 +18,7 @@ jobs:
             - name: Show dir
               run: dir .\elbuild
             - name: Make test.e
-              run: .\elbuild\eplc.exe test.e /o test.exe /static dwadwa.e
+              run: .\elbuild\eplc.exe test.e /o test.exe /static
             - name: Show result
               run: dir
               
