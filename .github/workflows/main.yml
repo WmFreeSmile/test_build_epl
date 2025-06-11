@@ -18,7 +18,7 @@ jobs:
             - name: Show dir
               run: dir .\elbuild
             - name: Make test.e
-              run: .\elbuild\eplc.exe test.e /o test.exe /static /set_epl_root .\elbuild\
+              run: .\elbuild\eplc.exe test.e /o test.exe /bm /set_epl_root .\elbuild\
             - name: Show result
               run: dir
               
